@@ -116,9 +116,8 @@ p {
 
 /* About Section */
 #about {
-  background: rgb(127, 196, 154);
+  background: linear-gradient(to right, rgb(193, 231, 178), rgb(53, 128, 98));
   padding: 7% 15%;
-  /* color: rgb(78, 78, 59); */
   color: #000;
 }
 
@@ -133,7 +132,7 @@ p {
 
 #about ul li {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 /* Footer Section */
@@ -156,13 +155,48 @@ p {
   color: rgb(77, 154, 107);
 }
 
-#footer p{
+#footer p {
   font-size: 18px;
 }
 
 /* Responsiveness */
-@media (max-width: 1028px) {
-  #title {
-    text-align: center;
+@media (max-width: 1400px) {
+  .navbar {
+    padding: 0 0 2rem;
+  }
+
+  nav .navbar-brand {
+    font-size: 3rem !important;
+  }
+
+  .big-heading {
+    font-size: 2.7rem;
+  }
+
+  @media (max-width: 576px) {
+    .container-fluid {
+      padding: 7% 8%;
+    }
+
+    nav .navbar-brand {
+      font-size: 2.5rem !important;
+    }
+
+    .big-heading {
+      font-size: 2rem;
+    }
+
+    #about {
+      padding: 8%;
+    }
+
+    .about-title {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    #about ul li {
+      margin-bottom: 8px;
+    }
   }
 }
