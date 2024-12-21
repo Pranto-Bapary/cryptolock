@@ -121,6 +121,7 @@
     </section>
 
     <script>
+        // For Encryption: E(x) = (x * inverseKey) mod alphabetSize
         function encrypt() {
             const plainText = document.getElementById('plainText').value.toUpperCase();
             const key = parseInt(document.getElementById('encryptionKey').value);
@@ -146,6 +147,8 @@
             document.getElementById('inverseKey').value = findDivisionInverse(key, alphabetSize);
         }
 
+
+        // For Decryption: D(y) = (y * inverseKey) mod alphabetSize
         function decrypt() {
             const cipherText = document.getElementById('inputCipherText').value.toUpperCase();
             const inverseKey = parseInt(document.getElementById('inverseKeyInput').value);
@@ -165,9 +168,10 @@
             document.getElementById('decryptedText').value = decryptedText;
         }
 
-        function findDivisionInverse(a, m) {
-            for (let i = 1; i < m; i++) {
-                if ((a * i) % m === 1) {
+        // inverse exists if key and alphabetSize are co prime. Means gcd(key,alphabetSize) = 1
+        function findDivisionInverse(key, alphabetSize) {
+            for (let i = 1; i < alphabetSize; i++) {
+                if ((key * i) % alphabetSize === 1) {
                     return i;
                 }
             }
